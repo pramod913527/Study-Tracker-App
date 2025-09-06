@@ -1,0 +1,70 @@
+openapi: 3.0.0
+info:
+  title: Study Tracker API
+  version: 1.0.0
+servers:
+  - url: /api
+paths:
+  /auth/login:
+    post:
+      summary: Login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: JWT token
+  /auth/signup:
+    post:
+      summary: Signup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '201':
+          description: User created
+  /sessions:
+    get:
+      summary: List sessions
+      responses:
+        '200':
+          description: List of sessions
+    post:
+      summary: Create session
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                studentId:
+                  type: string
+                startTime:
+                  type: string
+                  format: date-time
+      responses:
+        '201':
+          description: Session created
+  /notifications:
+    get:
+      summary: List notifications
+      responses:
+        '200':
+          description: List of notifications

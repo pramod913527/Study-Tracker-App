@@ -1,0 +1,49 @@
+{
+  "info": {
+    "name": "Study Tracker API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "url": {"raw": "/api/auth/login", "host": ["/api"], "path": ["auth", "login"]},
+        "body": {"mode": "raw", "raw": "{\"email\":\"test@example.com\",\"password\":\"password\"}"}
+      }
+    },
+    {
+      "name": "Signup",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "url": {"raw": "/api/auth/signup", "host": ["/api"], "path": ["auth", "signup"]},
+        "body": {"mode": "raw", "raw": "{\"email\":\"new@example.com\",\"password\":\"password\"}"}
+      }
+    },
+    {
+      "name": "List Sessions",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "/api/sessions", "host": ["/api"], "path": ["sessions"]}
+      }
+    },
+    {
+      "name": "Create Session",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "url": {"raw": "/api/sessions", "host": ["/api"], "path": ["sessions"]},
+        "body": {"mode": "raw", "raw": "{\"studentId\":\"123\",\"startTime\":\"2025-09-05T10:00:00Z\"}"}
+      }
+    },
+    {
+      "name": "List Notifications",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "/api/notifications", "host": ["/api"], "path": ["notifications"]}
+      }
+    }
+  ]
+}
